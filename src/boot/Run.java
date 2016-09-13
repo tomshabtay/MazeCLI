@@ -11,7 +11,8 @@ import view.MyView;
 public class Run {
 
 	public static void main(String[] args) {
-		System.out.println("CLI:");
+		System.out.println("this is a test");
+		//System.out.println("CLI:");
 		MyModel model = new MyModel();
 		MyView view = new MyView(new BufferedReader(new InputStreamReader(System.in)),
 							     new PrintWriter(System.out));
