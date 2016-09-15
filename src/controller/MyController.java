@@ -6,7 +6,11 @@ import controller.commands.Command;
 import controller.commands.DirCommand;
 import controller.commands.DisplayCrossCommand;
 import controller.commands.DisplayMazeCommand;
+import controller.commands.DisplaySolutionCommand;
 import controller.commands.GenerateMazeCommand;
+import controller.commands.LoadMazeCommand;
+import controller.commands.SaveMazeCommand;
+import controller.commands.SolveMazeCommand;
 import model.MyModel;
 import view.MyView;
 
@@ -23,8 +27,12 @@ public class MyController implements Controller {
 		commands.put("generate_3d_maze", new GenerateMazeCommand(this));
 		commands.put("display", new DisplayMazeCommand(this));
 		commands.put("display_cross_section", new DisplayCrossCommand(this));
+		commands.put("save_maze", new SaveMazeCommand(this));
+		commands.put("load_maze", new LoadMazeCommand(this));
+		commands.put("solve", new SolveMazeCommand(this));
+		commands.put("display_solution", new DisplaySolutionCommand(this));
 		
-
+	
 		// Initiating view and model
 		this.view = view;
 		this.model = model;
@@ -57,5 +65,28 @@ public class MyController implements Controller {
 	public void displayCross(String args) {
 		model.displayCross(args);
 	}
+	
+	public void displaySolution(String args)
+	{
+		model.displaySolution(args);
+	}
+	
+	public void solveMaze(String args)
+	{
+		model.solveMaze(args);
+	}
 
+	public void saveMaze(String args){
+		model.saveMaze(args);
+	}
+	
+	public void loadMaze(String args){
+		model.loadMaze(args);
+	}
+
+	@Override
+	public void exit() {
+		// TODO Auto-generated method stub
+		
+	}
 }
